@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.epam.tc</groupId>
+    <artifactId>hwSelenium</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!--        dependencies versions-->
+        <calculator.version>1.0</calculator.version>
+        <testng.version>7.3.0</testng.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <webdrivermanager.version>5.0.2</webdrivermanager.version>
+        <assertj-core.version>3.15.0</assertj-core.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
+        <htmlelements-java.version>1.20.0</htmlelements-java.version>
+        <htmlelements-matchers.version>1.20.0</htmlelements-matchers.version>
+
+        <!--        plagins versions-->
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+
+        <!--        path -->
+        <testng.suite.path>${project.basedir}/src/test/resources/suits</testng.suite.path>
+        <lib.calculator.path>${project.basedir}/lib/calculator-1.0.jar</lib.calculator.path>
+    </properties>
+
+<dependencies>
+    <dependency>
+        <groupId>com.epam.tat.module4</groupId>
+        <artifactId>calculator</artifactId>
+        <version>${calculator.version}</version>
+        <scope>system</scope>
+        <systemPath>${lib.calculator.path}</systemPath>
+    </dependency>
+
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>${testng.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium-java.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>${webdrivermanager.version}</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>${assertj-core.version}</version>
+    </dependency>
+</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>sum-sub-suite</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw1/hw1-sum-sub-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>mult-div-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw1/hw1-mult-div-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>sqrt-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw1/hw1-sqrt-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>all-tests-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw1/hw1-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw2Tests</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw2/hw2-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+    </profiles>
+</project>
