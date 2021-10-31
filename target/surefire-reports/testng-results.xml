@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-10-31T20:09:22 MSK" name="hw2-all-tests-suite" finished-at="2021-10-31T20:09:29 MSK" duration-ms="7188">
+    <groups>
+    </groups>
+    <test started-at="2021-10-31T20:09:22 MSK" name="hw2-all-tests-suite" finished-at="2021-10-31T20:09:29 MSK" duration-ms="7188">
+      <class name="hw2.ex2.DifferentElementsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:hw2.ex2.DifferentElementsTest@79ca92b9]" started-at="2021-10-31T20:09:26 MSK" name="setUp" finished-at="2021-10-31T20:09:27 MSK" duration-ms="937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="checkDifferentElementsTest()[pri:0, instance:hw2.ex2.DifferentElementsTest@79ca92b9]" started-at="2021-10-31T20:09:27 MSK" name="checkDifferentElementsTest" finished-at="2021-10-31T20:09:29 MSK" duration-ms="2024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkDifferentElementsTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:hw2.ex2.DifferentElementsTest@79ca92b9]" started-at="2021-10-31T20:09:29 MSK" name="tearDown" finished-at="2021-10-31T20:09:29 MSK" duration-ms="126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- hw2.ex2.DifferentElementsTest -->
+      <class name="hw2.ex1.HomePageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:hw2.ex1.HomePageTest@8909f18]" started-at="2021-10-31T20:09:22 MSK" name="setUp" finished-at="2021-10-31T20:09:24 MSK" duration-ms="1992" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="checkElementsTest()[pri:0, instance:hw2.ex1.HomePageTest@8909f18]" started-at="2021-10-31T20:09:24 MSK" name="checkElementsTest" finished-at="2021-10-31T20:09:26 MSK" duration-ms="1951" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkElementsTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:hw2.ex1.HomePageTest@8909f18]" started-at="2021-10-31T20:09:26 MSK" name="tearDown" finished-at="2021-10-31T20:09:26 MSK" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- hw2.ex1.HomePageTest -->
+    </test> <!-- hw2-all-tests-suite -->
+  </suite> <!-- hw2-all-tests-suite -->
+</testng-results>
