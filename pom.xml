@@ -12,6 +12,12 @@
         <!--        dependencies versions-->
         <calculator.version>1.0</calculator.version>
         <testng.version>7.3.0</testng.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <webdrivermanager.version>5.0.2</webdrivermanager.version>
+        <assertj-core.version>3.15.0</assertj-core.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
+        <htmlelements-java.version>1.20.0</htmlelements-java.version>
+        <htmlelements-matchers.version>1.20.0</htmlelements-matchers.version>
 
         <!--        plagins versions-->
         <maven.compiler.source>16</maven.compiler.source>
@@ -34,6 +40,36 @@
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <version>${testng.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium-java.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>${webdrivermanager.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>${assertj-core.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>commons-configuration</groupId>
+        <artifactId>commons-configuration</artifactId>
+        <version>${commons-configuration.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>ru.yandex.qatools.htmlelements</groupId>
+        <artifactId>htmlelements-java</artifactId>
+        <version>${htmlelements-java.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>ru.yandex.qatools.htmlelements</groupId>
+        <artifactId>htmlelements-matchers</artifactId>
+        <version>${htmlelements-matchers.version}</version>
     </dependency>
 </dependencies>
 
@@ -64,7 +100,7 @@
 
     <profiles>
         <profile>
-            <id>sum-sub-suite</id>
+            <id>hw1-sum-sub-suite</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -73,21 +109,33 @@
             </properties>
         </profile>
         <profile>
-            <id>mult-div-suite</id>
+            <id>hw1-mult-div-suite</id>
             <properties>
                 <testng.suite.file>${testng.suite.path}/hw1/hw1-mult-div-suite.xml</testng.suite.file>
             </properties>
         </profile>
         <profile>
-            <id>sqrt-suite</id>
+            <id>hw1-sqrt-suite</id>
             <properties>
                 <testng.suite.file>${testng.suite.path}/hw1/hw1-sqrt-suite.xml</testng.suite.file>
             </properties>
         </profile>
         <profile>
-            <id>all-tests-suite</id>
+            <id>hw1-all-tests-suite</id>
             <properties>
                 <testng.suite.file>${testng.suite.path}/hw1/hw1-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw2-all-tests-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw2/hw2-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3-all-tests-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw3/hw3-all-tests-suite.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
