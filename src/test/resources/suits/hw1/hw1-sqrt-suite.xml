@@ -2,7 +2,7 @@
 <suite name="hw1-sqrt-suite">
     <test name="hw1-sqrt-suite">
         <classes>
-            <class name="hw1.SqrtTest"></class>
+            <class name="hw1.tests.SqrtTest"></class>
         </classes>
     </test>
 </suite>

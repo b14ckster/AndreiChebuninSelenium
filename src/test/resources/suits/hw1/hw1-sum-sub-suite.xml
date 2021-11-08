@@ -3,8 +3,8 @@
 <suite name="hw1-sum-sub-suite">
     <test name="hw1-sum-sub-suite">
         <classes>
-            <class name="hw1.SumTest"></class>
-            <class name="hw1.SubTest"></class>
+            <class name="hw1.tests.SumTest"></class>
+            <class name="hw1.tests.SubTest"></class>
         </classes>
     </test>
 </suite>

@@ -1,6 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="hw1-all-tests-suite">
     <test name="hw1-all-tests-suite">
+<<<<<<< Updated upstream
         <classes>
             <class name="hw1.SumTest"></class>
             <class name="hw1.SubTest"></class>
@@ -8,5 +9,10 @@
             <class name="hw1.DivTest"></class>
             <class name="hw1.SqrtTest"></class>
         </classes>
+=======
+        <packages>
+            <package name="hw1.tests.*"></package>
+        </packages>
+>>>>>>> Stashed changes
     </test>
 </suite>

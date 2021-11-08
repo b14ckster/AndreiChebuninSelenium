@@ -2,8 +2,8 @@
 <suite name="hw1-mult-div-suite">
     <test name="hw1-mult-div-suite">
         <classes>
-            <class name="hw1.MultiplyTest"></class>
-            <class name="hw1.DivTest"></class>
+            <class name="hw1.tests.MultiplyTest"></class>
+            <class name="hw1.tests.DivTest"></class>
         </classes>
     </test>
 </suite>
