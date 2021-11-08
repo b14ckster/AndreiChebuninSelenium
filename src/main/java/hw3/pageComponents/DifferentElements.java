@@ -1,5 +1,6 @@
 package hw3.pageComponents;
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import ru.yandex.qatools.htmlelements.element.CheckBox;
 import ru.yandex.qatools.htmlelements.element.Radio;
-
-import java.util.List;
 
 @FindBy(className = "main-content-hg")
 public class DifferentElements extends AbstractComponent {
@@ -34,7 +33,7 @@ public class DifferentElements extends AbstractComponent {
         return dropdownSelect;
     }
 
-    public CheckBox getCheckbox (String text){
+    public CheckBox getCheckbox(String text) {
         return checkboxes
                 .stream()
                 .filter(item -> item.getText().contains(text))
@@ -44,7 +43,7 @@ public class DifferentElements extends AbstractComponent {
                 .orElse(null);
     }
 
-    public Radio getRadioButton (String text){
+    public Radio getRadioButton(String text) {
         return radioButtons
                 .stream()
                 .filter(item -> item.getText().contains(text))

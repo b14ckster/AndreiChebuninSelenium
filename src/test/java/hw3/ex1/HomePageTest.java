@@ -1,7 +1,13 @@
 package hw3.ex1;
 
+import static hw3.DataClassTest.BASE_URL;
+import static hw3.DataClassTest.BENEFIT_TEXTS;
+import static hw3.DataClassTest.BROWSER_TITLE;
+import static hw3.DataClassTest.HEADER_ITEMS_NAMES;
+import static hw3.DataClassTest.ITEMS_IN_SIDEBAR_MENU;
+import static hw3.DataClassTest.NUMBER_OF_BENEFIT_IMAGES_AND_TEXTS;
+
 import hw3.BaseClassTest;
-import static hw3.DataClassTest.*;
 import hw3.pageComponents.Frame;
 import hw3.pages.HomePage;
 import org.testng.annotations.Test;
@@ -9,7 +15,7 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BaseClassTest {
 
     @Test
-    public void checkElementsTest(){
+    public void checkElementsTest() {
         //1. Open test site by URL
         HomePage homePage = new HomePage(webDriver, BASE_URL);
 
@@ -21,8 +27,8 @@ public class HomePageTest extends BaseClassTest {
 
         //4. Assert Username is loggined
         softAssertions
-                .assertThat(homePage.getHeader().isUsernameDisplayed()).
-                isTrue();
+                .assertThat(homePage.getHeader().isUsernameDisplayed())
+                .isTrue();
         softAssertions
                 .assertThat(homePage.getHeader().getUsername())
                 .isEqualTo(properties.getString("username"));
@@ -57,8 +63,8 @@ public class HomePageTest extends BaseClassTest {
                 .isEqualTo(BENEFIT_TEXTS);
 
         //8. Assert that there is the iframe with “Frame Button” exist
-       softAssertions.assertThat(homePage.getFrame().getFrame()).isNotNull();
-       softAssertions.assertThat(homePage.getFrame().isFrameDisplayed()).isTrue();
+        softAssertions.assertThat(homePage.getFrame().getFrame()).isNotNull();
+        softAssertions.assertThat(homePage.getFrame().isFrameDisplayed()).isTrue();
 
         //9. Switch to the iframe and check that there is “Frame Button” in the iframe
         Frame frame = homePage.switchToFrame();
@@ -67,10 +73,10 @@ public class HomePageTest extends BaseClassTest {
         softAssertions.assertThat(frame.isFrameButtonDisplayed()).isTrue();
 
         //10. Switch to original window back
-       homePage = (HomePage) frame.switchToDefault();
+        homePage = (HomePage) frame.switchToDefault();
 
         //11. Assert that there are 5 items in the Left Section are displayed and they have proper text
-       softAssertions
+        softAssertions
                .assertThat(homePage.getSidebarMenu().getNumberOfSidebar())
                .isEqualTo(ITEMS_IN_SIDEBAR_MENU.size());
 

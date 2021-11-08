@@ -1,13 +1,16 @@
 package hw3;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import java.util.concurrent.TimeUnit;
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.apache.commons.configuration.*;
-import java.util.concurrent.TimeUnit;
 
 public class BaseClassTest {
     protected WebDriver webDriver;
@@ -27,7 +30,7 @@ public class BaseClassTest {
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         webDriver.quit();
     }
     

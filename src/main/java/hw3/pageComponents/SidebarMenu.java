@@ -1,11 +1,10 @@
 package hw3.pageComponents;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @FindBy(css = "ul.sidebar-menu")
 public class SidebarMenu extends AbstractComponent {
@@ -17,11 +16,11 @@ public class SidebarMenu extends AbstractComponent {
     @FindBy(css = "ul.sidebar-menu>li")
     private List<WebElement> sidebarMenu;
 
-    public List<WebElement> getSidebarMenu(){
+    public List<WebElement> getSidebarMenu() {
         return sidebarMenu;
     }
 
-    public int getNumberOfSidebar(){
+    public int getNumberOfSidebar() {
         return sidebarMenu.size();
     }
 

@@ -1,20 +1,16 @@
 package hw3.pageComponents;
 
 import hw3.pages.DifferentElementsPage;
-import org.openqa.selenium.By;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @FindBy(tagName = "header")
 public class Header extends AbstractComponent {
 
-
-
-    public Header (WebDriver webDriver) {
+    public Header(WebDriver webDriver) {
         super(webDriver);
     }
 
@@ -57,11 +53,11 @@ public class Header extends AbstractComponent {
         return this;
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return username.getText();
     }
 
-    public boolean isUsernameDisplayed(){
+    public boolean isUsernameDisplayed() {
         return username.isDisplayed();
     }
 

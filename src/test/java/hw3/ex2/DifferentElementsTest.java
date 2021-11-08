@@ -1,16 +1,24 @@
 package hw3.ex2;
 
-import static hw3.DataClassTest.*;
+import static hw3.DataClassTest.BASE_URL;
+import static hw3.DataClassTest.BROWSER_TITLE;
+import static hw3.DataClassTest.CHECKBOX;
+import static hw3.DataClassTest.CHECKBOX_LOG;
+import static hw3.DataClassTest.DIFFERENT_ELEMENTS_URL;
+import static hw3.DataClassTest.DROPDOWN;
+import static hw3.DataClassTest.DROPDOWN_LOG;
+import static hw3.DataClassTest.RADIO;
+import static hw3.DataClassTest.RADIO_LOG;
+
 import hw3.BaseClassTest;
 import hw3.pages.DifferentElementsPage;
 import hw3.pages.HomePage;
+import java.util.ArrayList;
+import java.util.List;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.htmlelements.element.CheckBox;
 import ru.yandex.qatools.htmlelements.element.Radio;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DifferentElementsTest extends BaseClassTest {
 
@@ -64,8 +72,8 @@ public class DifferentElementsTest extends BaseClassTest {
                 .assertThat(checkBoxWater)
                 .isNotNull();
         softAssertions
-                .assertThat(checkBoxWind).
-                isNotNull();
+                .assertThat(checkBoxWind)
+                .isNotNull();
 
         checkBoxWater.click();
         checkBoxWind.click();
@@ -82,9 +90,9 @@ public class DifferentElementsTest extends BaseClassTest {
                 .getDifferentElements()
                 .getRadioButton(RADIO.get(3));
 
-        softAssertions.
-                assertThat(radio).
-                isNotNull();
+        softAssertions
+                .assertThat(radio)
+                .isNotNull();
 
         radio.click();
 
@@ -93,15 +101,15 @@ public class DifferentElementsTest extends BaseClassTest {
                 .isTrue();
 
         //8. Select in dropdown
-       Select select = differentElementsPage
+        Select select = differentElementsPage
                .getDifferentElements()
                .getDropdown(DROPDOWN.get(3));
 
-       softAssertions
+        softAssertions
                .assertThat(select)
                .isNotNull();
 
-       softAssertions
+        softAssertions
                .assertThat(select.getFirstSelectedOption().getText())
                .isEqualTo(DROPDOWN.get(3));
 
@@ -119,11 +127,11 @@ public class DifferentElementsTest extends BaseClassTest {
                 )
         );
 
-        expectedLog.forEach (log ->
+        expectedLog.forEach(log ->
                         softAssertions
                                 .assertThat(differentElementsPage.getLogPanel().findLog(log))
                                 .isNotNull()
-                );
+        );
 
         //Assert All
         softAssertions.assertAll();

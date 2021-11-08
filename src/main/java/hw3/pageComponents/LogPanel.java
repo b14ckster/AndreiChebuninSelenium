@@ -1,16 +1,15 @@
 package hw3.pageComponents;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @FindBy(css = "ul.logs")
 public class LogPanel extends AbstractComponent {
 
-    public LogPanel(WebDriver webDriver){
+    public LogPanel(WebDriver webDriver) {
         super(webDriver);
     }
 

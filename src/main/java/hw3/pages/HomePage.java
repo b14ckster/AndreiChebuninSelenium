@@ -4,7 +4,7 @@ import hw3.pageComponents.Benefit;
 import hw3.pageComponents.Frame;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends AbstractPage{
+public class HomePage extends AbstractPage {
 
     private final Frame frame = new Frame(this);
     private final Benefit benefit = new Benefit(webDriver);

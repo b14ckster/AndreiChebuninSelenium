@@ -1,15 +1,14 @@
 package hw3.pageComponents;
 
 import hw3.pages.AbstractPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Frame extends AbstractComponent{
+public class Frame extends AbstractComponent {
 
     private final AbstractPage parent;
 
-    public Frame(AbstractPage parent){
+    public Frame(AbstractPage parent) {
         super(parent.webDriver);
         this.parent = parent;
     }
@@ -32,11 +31,11 @@ public class Frame extends AbstractComponent{
         return frame.isDisplayed();
     }
 
-    public boolean isFrameButtonDisplayed(){
+    public boolean isFrameButtonDisplayed() {
         return frameButton.isDisplayed();
     }
 
-    public AbstractPage switchToDefault(){
+    public AbstractPage switchToDefault() {
         parent.webDriver.switchTo().parentFrame();
         return parent;
     }
