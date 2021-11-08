@@ -1,12 +1,11 @@
 package hw2.ex1;
 
 import hw2.BaseClassTest;
+import java.util.ArrayList;
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomePageTest extends BaseClassTest {
 
@@ -21,25 +20,25 @@ public class HomePageTest extends BaseClassTest {
     );
 
     private static final List<String> TEXTS_UNDER_IMAGES = new ArrayList<>(
-            List.of(
-                   "To include good practices\n" +
-                           "and ideas from successful\n" +
-                           "EPAM project",
+        List.of(
+            "To include good practices\n"
+                + "and ideas from successful\n"
+                + "EPAM project",
 
-                    "To be flexible and\n" +
-                           "customizable",
+            "To be flexible and\n"
+                + "customizable",
 
-                   "To be multiplatform",
+            "To be multiplatform",
 
-                    "Already have good base\n" +
-                         "(about 20 internal and\n" +
-                            "some external projects),\n" +
-                            "wish to get more…"
-            )
+            "Already have good base\n"
+                + "(about 20 internal and\n"
+                + "some external projects),\n"
+                + "wish to get more…"
+        )
     );
 
     @Test
-    public void checkElementsTest(){
+    public void checkElementsTest() {
         //1. Open test site by URL
         webDriver.navigate().to(BASE_URL);
 
@@ -61,7 +60,7 @@ public class HomePageTest extends BaseClassTest {
         List<WebElement> headerSectionItemsNames =  webDriver.findElements(By.xpath("//header/div/nav/ul[1]/li/a"));
         softAssertions.assertThat(headerSectionItemsNames.size()).isEqualTo(HEADER_SECTION_ITEMS_NAMES.size());
 
-        for (int i = 0; i <HEADER_SECTION_ITEMS_NAMES.size(); i++){
+        for (int i = 0; i < HEADER_SECTION_ITEMS_NAMES.size(); i++) {
             softAssertions.assertThat(headerSectionItemsNames.get(i).isDisplayed()).isTrue();
             softAssertions.assertThat(headerSectionItemsNames.get(i).getText())
                     .isEqualTo(HEADER_SECTION_ITEMS_NAMES.get(i));
@@ -71,7 +70,7 @@ public class HomePageTest extends BaseClassTest {
         List<WebElement> pageImages = webDriver.findElements(By.className("benefit-icon"));
         softAssertions.assertThat(pageImages.size()).isEqualTo(NUMBER_OF_IMAGES_AND_TEXTS);
 
-        for (int i = 0; i < NUMBER_OF_IMAGES_AND_TEXTS; i++){
+        for (int i = 0; i < NUMBER_OF_IMAGES_AND_TEXTS; i++) {
             softAssertions.assertThat(pageImages.get(i).isDisplayed()).isTrue();
         }
 
@@ -79,7 +78,7 @@ public class HomePageTest extends BaseClassTest {
         List<WebElement> textsUnderImages = webDriver.findElements(By.className("benefit-txt"));
         softAssertions.assertThat(textsUnderImages.size()).isEqualTo(NUMBER_OF_IMAGES_AND_TEXTS);
 
-        for (int i = 0; i < NUMBER_OF_IMAGES_AND_TEXTS; i++){
+        for (int i = 0; i < NUMBER_OF_IMAGES_AND_TEXTS; i++) {
             softAssertions.assertThat(textsUnderImages.get(i).isDisplayed()).isTrue();
             softAssertions.assertThat(textsUnderImages.get(i).getText())
                     .isEqualTo(TEXTS_UNDER_IMAGES.get(i));
@@ -105,7 +104,7 @@ public class HomePageTest extends BaseClassTest {
                 By.cssSelector("ul[class=\"sidebar-menu left\"]>li"));
         softAssertions.assertThat(itemsInLeftSection.size()).isEqualTo(ITEMS_IN_LEFT_SECTION.size());
 
-        for (int i = 0; i < ITEMS_IN_LEFT_SECTION.size(); i++){
+        for (int i = 0; i < ITEMS_IN_LEFT_SECTION.size(); i++) {
             softAssertions.assertThat(itemsInLeftSection.get(i).isDisplayed()).isTrue();
             softAssertions.assertThat(itemsInLeftSection.get(i).getText())
                     .isEqualTo(ITEMS_IN_LEFT_SECTION.get(i));

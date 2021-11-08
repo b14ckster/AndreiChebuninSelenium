@@ -1,13 +1,12 @@
 package hw2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import java.util.concurrent.TimeUnit;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
-import java.util.concurrent.TimeUnit;
 
 public class BaseClassTest {
     protected WebDriver webDriver;
@@ -20,7 +19,7 @@ public class BaseClassTest {
     protected static final String EXPECTED_USERNAME = "ROMAN IOVLEV";
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
@@ -30,7 +29,7 @@ public class BaseClassTest {
     }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         webDriver.quit();
     }
 
