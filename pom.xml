@@ -18,14 +18,17 @@
         <commons-configuration.version>1.10</commons-configuration.version>
         <htmlelements-java.version>1.20.0</htmlelements-java.version>
         <htmlelements-matchers.version>1.20.0</htmlelements-matchers.version>
-
+        <allure-testng.version>2.15.0</allure-testng.version>
+        <allure-java-commons.version>2.15.0</allure-java-commons.version>
+        <cucumber.version>7.0.0</cucumber.version>
         <!--        plagins versions-->
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-
+        <allure-maven.version>2.10.0</allure-maven.version>
         <!--        path -->
         <testng.suite.path>${project.basedir}/src/test/resources/suits</testng.suite.path>
         <lib.calculator.path>${project.basedir}/lib/calculator-1.0.jar</lib.calculator.path>
+
     </properties>
 
 <dependencies>
@@ -71,6 +74,28 @@
         <artifactId>htmlelements-matchers</artifactId>
         <version>${htmlelements-matchers.version}</version>
     </dependency>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-testng</artifactId>
+        <version>${allure-testng.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-java-commons</artifactId>
+        <version>${allure-java-commons.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>${cucumber.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>${cucumber.version}</version>
+    </dependency>
 </dependencies>
 
     <build>
@@ -94,6 +119,11 @@
                         <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
             </plugin>
         </plugins>
     </build>
@@ -136,6 +166,18 @@
             <id>hw3-all-tests-suite</id>
             <properties>
                 <testng.suite.file>${testng.suite.path}/hw3/hw3-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+        <id>hw4-all-tests-suite</id>
+        <properties>
+            <testng.suite.file>${testng.suite.path}/hw4/hw4-all-tests-suite.xml</testng.suite.file>
+        </properties>
+    </profile>
+        <profile>
+            <id>hw4-tests-without-failTest</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw4/hw4-tests-without-failTest</testng.suite.file>
             </properties>
         </profile>
     </profiles>
