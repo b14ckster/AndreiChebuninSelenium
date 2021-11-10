@@ -22,8 +22,8 @@
         <allure-java-commons.version>2.15.0</allure-java-commons.version>
         <cucumber.version>7.0.0</cucumber.version>
         <!--        plagins versions-->
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <allure-maven.version>2.10.0</allure-maven.version>
         <!--        path -->
         <testng.suite.path>${project.basedir}/src/test/resources/suits</testng.suite.path>
@@ -169,15 +169,15 @@
             </properties>
         </profile>
         <profile>
-        <id>hw4-all-tests-suite</id>
-        <properties>
-            <testng.suite.file>${testng.suite.path}/hw4/hw4-all-tests-suite.xml</testng.suite.file>
-        </properties>
-    </profile>
-        <profile>
-            <id>hw4-tests-without-failTest</id>
+            <id>hw4-all-tests-suite</id>
             <properties>
-                <testng.suite.file>${testng.suite.path}/hw4/hw4-tests-without-failTest</testng.suite.file>
+                <testng.suite.file>${testng.suite.path}/hw4/hw4-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw4-tests-without-fail-test-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw4/hw4-tests-without-fail-test-suite.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>

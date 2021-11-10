@@ -37,11 +37,18 @@ public class AssertionStep extends AbstractStep {
                 .hasSize(expectedSize);
     }
 
-    @Step("Assert that items: {expectedItems} on the header section have proper texts")
+    @Step("Assert that items: {expectedItems} on the header section")
     public void checkItemsIsDisplayed(List<String> expectedItems) {
         Assertions
                 .assertThat(homePage.getHeader().getNavigationElementsTexts())
                 .isEqualTo(expectedItems);
+    }
+
+    @Step("Check that items have proper name {expectedName} on the header section")
+    public void checkNameItemsOnHeader(List<String> expectedName) {
+        Assertions
+            .assertThat(homePage.getHeader().getNavigationElementsTexts())
+            .isEqualTo(expectedName);
     }
 
     @Step("Assert that there are {expectedSize} images on the Index Page")
@@ -152,7 +159,7 @@ public class AssertionStep extends AbstractStep {
         expectedLog.forEach(log ->
                 softAssertions
                         .assertThat(differentElementsPage.getLogPanel().findLog(log))
-                        .isNotNull()
+                        .contains(log)
         );
         softAssertions.assertAll();
     }

@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 @Feature("Home Page contains all items in header section, benefits, frame with button, and items in left section")
 public class HomePageTest extends BaseClassTest {
 
-    @Test(description = "Testing failure test")
+    @Test(description = "Testing Home page elements")
     public void checkElementsTest() {
         //1. Open test site by URL
         actionStep.openHomePage(BASE_URL);
@@ -28,14 +28,14 @@ public class HomePageTest extends BaseClassTest {
         assertionStep.checkBrowserTitle(BROWSER_TITLE);
 
         //3. Perform login
-        actionStep.performLogin("Wrong login", "Wrong password");
+        actionStep.performLogin(properties.getString("login"), properties.getString("pass"));
 
         //4. Assert Username is loggined
         assertionStep.checkUsername(properties.getString("username"));
 
         //5. Assert that there are 4 items on the header section are displayed and they have proper texts
         assertionStep.checkNumberOfItemsOnHeader(HEADER_ITEMS_NAMES.size());
-        assertionStep.checkItemsInSidebarTexts(HEADER_ITEMS_NAMES);
+        assertionStep.checkNameItemsOnHeader(HEADER_ITEMS_NAMES);
 
         //6. Assert that there are 4 images on the Index Page and they are displayed
         assertionStep.checkNumberOfBenefitImages(NUMBER_OF_BENEFIT_IMAGES_AND_TEXTS);

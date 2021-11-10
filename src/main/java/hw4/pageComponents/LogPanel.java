@@ -14,14 +14,15 @@ public class LogPanel extends AbstractComponent {
     }
 
     @FindBy(tagName = "li")
-    private List<WebElement> ligList;
+    private List<WebElement> logList;
 
-    public List<String> findLog(String text) {
-        return ligList
-                .stream()
-                .map(WebElement::getText)
-                .filter(log -> log.contains(text))
-                .collect(Collectors.toList());
+    public String findLog(String text) {
+        return logList
+            .stream()
+            .map(WebElement::getText)
+            .filter(log -> log.contains(text))
+            .findFirst()
+            .toString();
     }
 }
 
