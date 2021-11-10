@@ -20,6 +20,8 @@
         <htmlelements-matchers.version>1.20.0</htmlelements-matchers.version>
         <allure-testng.version>2.15.0</allure-testng.version>
         <allure-java-commons.version>2.15.0</allure-java-commons.version>
+        <aspectj.version>1.8.10</aspectj.version>
+        <slf4j.version>1.7.32</slf4j.version>
         <cucumber.version>7.0.0</cucumber.version>
         <!--        plagins versions-->
         <maven.compiler.source>11</maven.compiler.source>
@@ -87,6 +89,26 @@
         <scope>test</scope>
     </dependency>
     <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>${slf4j.version}</version>
+    </dependency>
+<!--    <dependency>-->
+<!--        <groupId>org.slf4j</groupId>-->
+<!--        <artifactId>slf4j-simple</artifactId>-->
+<!--        <version>${slf4j.version}</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--        <groupId>org.aspectj</groupId>-->
+<!--        <artifactId>aspectjweaver</artifactId>-->
+<!--        <version>${aspectj.version}</version>-->
+<!--    </dependency>-->
+    <dependency>
         <groupId>io.cucumber</groupId>
         <artifactId>cucumber-java</artifactId>
         <version>${cucumber.version}</version>
@@ -127,6 +149,20 @@
             </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+                <configuration>
+                    <reportVersion>${allure-testng.version}</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <profiles>
         <profile>
