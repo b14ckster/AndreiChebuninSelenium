@@ -3,6 +3,7 @@ package hw2.ex1;
 import hw2.BaseClassTest;
 import java.util.ArrayList;
 import java.util.List;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -43,7 +44,7 @@ public class HomePageTest extends BaseClassTest {
         webDriver.navigate().to(BASE_URL);
 
         //2. Assert Browser title
-        softAssertions.assertThat(webDriver.getTitle()).isEqualTo(BROWSER_TITLE);
+        Assertions.assertThat(webDriver.getTitle()).isEqualTo(BROWSER_TITLE);
 
         //3. Perform login
         webDriver.findElement(By.id("user-icon")).click();
@@ -53,8 +54,8 @@ public class HomePageTest extends BaseClassTest {
 
         //4. Assert Username is loggined
         WebElement user = webDriver.findElement(By.id("user-name"));
-        softAssertions.assertThat(user.isDisplayed()).isTrue();
-        softAssertions.assertThat(user.getText()).isEqualTo(EXPECTED_USERNAME);
+        Assertions.assertThat(user.isDisplayed()).isTrue();
+        Assertions.assertThat(user.getText()).isEqualTo(EXPECTED_USERNAME);
 
         //5. Assert that there are 4 items on the header section are displayed and they have proper texts
         List<WebElement> headerSectionItemsNames =  webDriver.findElements(By.xpath("//header/div/nav/ul[1]/li/a"));

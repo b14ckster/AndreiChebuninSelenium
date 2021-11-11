@@ -1,13 +1,13 @@
 package hw2.ex2;
 
 import hw2.BaseClassTest;
+import java.util.ArrayList;
+import java.util.List;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DifferentElementsTest extends BaseClassTest {
 
@@ -38,11 +38,12 @@ public class DifferentElementsTest extends BaseClassTest {
                     RADIO_LOG + RADIO.get(3),
                     CHECKBOX.get(2) + CHECKBOX_LOG,
                     CHECKBOX.get(0) + CHECKBOX_LOG
-            ) );
+            )
+    );
 
     //utility method for finding a web-element
-    public WebElement getItem (List<WebElement> ItemList, String name){
-        return ItemList
+    public WebElement getItem(List<WebElement> itemList, String name) {
+        return itemList
                 .stream()
                 .filter(item -> item.getText().contains(name))
                 .findFirst()
@@ -57,7 +58,7 @@ public class DifferentElementsTest extends BaseClassTest {
         webDriver.navigate().to(BASE_URL);
 
         //2. Assert Browser title
-        softAssertions.assertThat(webDriver.getTitle()).isEqualTo(BROWSER_TITLE);
+        Assertions.assertThat(webDriver.getTitle()).isEqualTo(BROWSER_TITLE);
 
         //3. Perform login
         webDriver.findElement(By.id("user-icon")).click();
@@ -67,15 +68,15 @@ public class DifferentElementsTest extends BaseClassTest {
 
         //4. Assert User name in the left-top side of screen that user is loggined
         WebElement user = webDriver.findElement(By.id("user-name"));
-        softAssertions.assertThat(user.isDisplayed()).isTrue();
-        softAssertions.assertThat(user.getText()).isEqualTo(EXPECTED_USERNAME);
+        Assertions.assertThat(user.isDisplayed()).isTrue();
+        Assertions.assertThat(user.getText()).isEqualTo(EXPECTED_USERNAME);
 
         //5. Open through the header menu Service -> Different Elements Page
         WebElement serviceDropdown = webDriver.findElement(By.className("dropdown-toggle"));
         serviceDropdown.click();
         serviceDropdown.findElement(By.xpath("//li[8]")).click();
 
-        softAssertions.assertThat(webDriver.getCurrentUrl()).isEqualTo(DIFFERENT_ELEMENTS_URL);
+        Assertions.assertThat(webDriver.getCurrentUrl()).isEqualTo(DIFFERENT_ELEMENTS_URL);
 
         //6. Select checkboxes
         List<WebElement> checkbox = webDriver.findElements(By.className("label-checkbox"));
@@ -108,7 +109,7 @@ public class DifferentElementsTest extends BaseClassTest {
         List<WebElement> actualLog = webDriver.findElements(By.cssSelector("ul.panel-body-list.logs li"));
         softAssertions.assertThat(actualLog.isEmpty()).isFalse();
 
-        for (int i = 0; i < EXPECTED_LOG.size(); i++){
+        for (int i = 0; i < EXPECTED_LOG.size(); i++) {
             softAssertions.assertThat(actualLog.get(i).getText()).contains(EXPECTED_LOG.get(i));
         }
 
