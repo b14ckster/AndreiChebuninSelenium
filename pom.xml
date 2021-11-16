@@ -27,6 +27,10 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <allure-maven.version>2.10.0</allure-maven.version>
+        <allure.results.directory>target/allure-results</allure.results.directory>
+        <allure.link.issue.pattern>https://example.org/browse/{}</allure.link.issue.pattern>
+        <allure.link.tms.pattern>https://example.org/browse/{}</allure.link.tms.pattern>
+
         <!--        path -->
         <testng.suite.path>${project.basedir}/src/test/resources/suits</testng.suite.path>
         <lib.calculator.path>${project.basedir}/lib/calculator-1.0.jar</lib.calculator.path>
@@ -130,6 +134,11 @@
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                     <encoding>UTF-8</encoding>
+<!--                    <systemPropertyVariables>-->
+<!--                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>-->
+<!--                        <allure.link.issue.pattern>https://example.org/browse/{}</allure.link.issue.pattern>-->
+<!--                        <allure.link.tms.pattern>https://example.org/browse/{}</allure.link.tms.pattern>-->
+<!--                    </systemPropertyVariables>-->
                 </configuration>
             </plugin>
             <plugin>
@@ -140,6 +149,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>
