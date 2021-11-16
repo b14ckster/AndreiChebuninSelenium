@@ -10,6 +10,7 @@ import static hw3.DataClassTest.NUMBER_OF_BENEFIT_IMAGES_AND_TEXTS;
 import hw3.BaseClassTest;
 import hw3.pageComponents.Frame;
 import hw3.pages.HomePage;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends BaseClassTest {
@@ -20,16 +21,16 @@ public class HomePageTest extends BaseClassTest {
         HomePage homePage = new HomePage(webDriver, BASE_URL);
 
         //2. Assert Browser title
-        softAssertions.assertThat(homePage.getTitle()).isEqualTo(BROWSER_TITLE);
+        Assertions.assertThat(homePage.getTitle()).isEqualTo(BROWSER_TITLE);
 
         //3. Perform login
         homePage.getHeader().signIn(properties.getString("login"), properties.getString("pass"));
 
         //4. Assert Username is loggined
-        softAssertions
+        Assertions
                 .assertThat(homePage.getHeader().isUsernameDisplayed())
                 .isTrue();
-        softAssertions
+        Assertions
                 .assertThat(homePage.getHeader().getUsername())
                 .isEqualTo(properties.getString("username"));
 

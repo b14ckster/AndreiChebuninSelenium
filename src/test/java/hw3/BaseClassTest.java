@@ -1,6 +1,5 @@
 package hw3;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.configuration.Configuration;

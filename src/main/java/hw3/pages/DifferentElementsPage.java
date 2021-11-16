@@ -9,6 +9,7 @@ public class DifferentElementsPage extends AbstractPage {
     private final DifferentElements differentElements = new DifferentElements(webDriver);
     private final LogPanel logPanel = new LogPanel(webDriver);
 
+
     public DifferentElementsPage(WebDriver driver) {
         super(driver);
     }

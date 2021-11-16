@@ -15,6 +15,7 @@ import hw3.pages.DifferentElementsPage;
 import hw3.pages.HomePage;
 import java.util.ArrayList;
 import java.util.List;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.htmlelements.element.CheckBox;
@@ -29,7 +30,7 @@ public class DifferentElementsTest extends BaseClassTest {
         HomePage homePage = new HomePage(webDriver, BASE_URL);
 
         //2. Assert Browser title
-        softAssertions
+        Assertions
                 .assertThat(homePage.getTitle())
                 .isEqualTo(BROWSER_TITLE);
 
@@ -40,12 +41,11 @@ public class DifferentElementsTest extends BaseClassTest {
         );
 
         //4. Assert User name in the left-top side of screen that user is loggined
-
-        softAssertions
+        Assertions
                 .assertThat(homePage.getHeader().isUsernameDisplayed())
                 .isTrue();
 
-        softAssertions
+        Assertions
                 .assertThat(homePage.getHeader().getUsername())
                 .isEqualTo(properties.getString("username"));
 
@@ -53,65 +53,86 @@ public class DifferentElementsTest extends BaseClassTest {
         DifferentElementsPage differentElementsPage =
                 homePage.getHeader().clickDifferentElements();
 
-        softAssertions
+        Assertions
                 .assertThat(differentElementsPage.getUrl())
                 .isEqualTo(DIFFERENT_ELEMENTS_URL);
 
         //6. Select checkboxes
-        CheckBox checkBoxWater =
+        softAssertions
+            .assertThat(
                 differentElementsPage
-                .getDifferentElements()
-                .getCheckbox(CHECKBOX.get(0));
+                    .getDifferentElements()
+                    .getCheckbox(CHECKBOX.get(0))
+            )
+            .isNotNull();
 
-        CheckBox checkBoxWind =
+        softAssertions
+            .assertThat(
                 differentElementsPage
-                .getDifferentElements()
-                .getCheckbox(CHECKBOX.get(2));
+                    .getDifferentElements()
+                    .getCheckbox(CHECKBOX.get(2))
+            )
+            .isNotNull();
+
+        differentElementsPage
+            .getDifferentElements()
+            .clickOnCheckbox(CHECKBOX.get(0));
+
+        differentElementsPage
+            .getDifferentElements()
+            .clickOnCheckbox(CHECKBOX.get(2));
 
         softAssertions
-                .assertThat(checkBoxWater)
-                .isNotNull();
+            .assertThat(
+                differentElementsPage
+                    .getDifferentElements()
+                    .getCheckbox(CHECKBOX.get(0))
+                    .isSelected()
+            )
+            .isTrue();
         softAssertions
-                .assertThat(checkBoxWind)
-                .isNotNull();
-
-        checkBoxWater.click();
-        checkBoxWind.click();
-
-        softAssertions
-                .assertThat(checkBoxWater.isSelected())
-                .isTrue();
-        softAssertions
-                .assertThat(checkBoxWind.isSelected())
-                .isTrue();
+            .assertThat(
+                differentElementsPage
+                    .getDifferentElements()
+                    .getCheckbox(CHECKBOX.get(2))
+                    .isSelected())
+            .isTrue();
 
         //7. Select radio
-        Radio radio = differentElementsPage
+        softAssertions
+            .assertThat(differentElementsPage
                 .getDifferentElements()
-                .getRadioButton(RADIO.get(3));
+                .getRadioButton(RADIO.get(3)))
+            .isNotNull();
+
+        differentElementsPage
+            .getDifferentElements()
+            .clickOnRadioButton(RADIO.get(3));
 
         softAssertions
-                .assertThat(radio)
-                .isNotNull();
-
-        radio.click();
-
-        softAssertions
-                .assertThat(radio.isSelected())
-                .isTrue();
+            .assertThat(
+                differentElementsPage
+                    .getDifferentElements()
+                    .getRadioButton(RADIO.get(3))
+                    .isSelected())
+            .isTrue();
 
         //8. Select in dropdown
-        Select select = differentElementsPage
-               .getDifferentElements()
-               .getDropdown(DROPDOWN.get(3));
+        softAssertions
+            .assertThat(
+                differentElementsPage
+                    .getDifferentElements()
+                    .getDropdown(DROPDOWN.get(3)))
+            .isNotNull();
 
         softAssertions
-               .assertThat(select)
-               .isNotNull();
-
-        softAssertions
-               .assertThat(select.getFirstSelectedOption().getText())
-               .isEqualTo(DROPDOWN.get(3));
+            .assertThat(
+                differentElementsPage
+                    .getDifferentElements()
+                    .getDropdown(DROPDOWN.get(3))
+                    .getFirstSelectedOption()
+                    .getText())
+            .isEqualTo(DROPDOWN.get(3));
 
         //9. Assert that
         //for each checkbox there is an individual log row and value is corresponded to the status of checkbox
@@ -119,18 +140,21 @@ public class DifferentElementsTest extends BaseClassTest {
         //for dropdown there is a log row and value is corresponded to the selected value.
 
         List<String> expectedLog = new ArrayList<>(
-                List.of(
-                        DROPDOWN_LOG + DROPDOWN.get(3),
-                        RADIO_LOG + RADIO.get(3),
-                        CHECKBOX.get(2) + CHECKBOX_LOG,
-                        CHECKBOX.get(0) + CHECKBOX_LOG
-                )
+            List.of(
+                DROPDOWN_LOG + DROPDOWN.get(3),
+                RADIO_LOG + RADIO.get(3),
+                CHECKBOX.get(2) + CHECKBOX_LOG,
+                CHECKBOX.get(0) + CHECKBOX_LOG
+            )
         );
 
         expectedLog.forEach(log ->
-                        softAssertions
-                                .assertThat(differentElementsPage.getLogPanel().findLog(log))
-                                .isNotNull()
+            softAssertions
+                .assertThat(
+                    differentElementsPage
+                        .getLogPanel()
+                        .findLog(log))
+                .isNotNull()
         );
 
         //Assert All
