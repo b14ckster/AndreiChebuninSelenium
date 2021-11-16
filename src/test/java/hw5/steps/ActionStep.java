@@ -19,12 +19,12 @@ public class ActionStep extends AbstractStep {
 
     @When("I click on {string} button in Header")
     public void clickOnButtonInHeader(String buttonName) {
-        homePage.getHeader().getHeaderElement(buttonName).click();
+        homePage.getHeader().clickOnHeaderElement(buttonName);
     }
 
     @When("I click on {string} button in Service dropdown")
     public void clickOmButtonInServiceDropdown(String buttonName) {
-        homePage.getHeader().getDropdownElement(buttonName).click();
+        homePage.getHeader().clickOnOptionInDropdownService(buttonName);
     }
 
     @When("I select checkboxes")
@@ -32,16 +32,14 @@ public class ActionStep extends AbstractStep {
         checkboxNames.forEach(checkbox ->
             differentElementsPage
                 .getDifferentElements()
-                .getCheckbox(checkbox)
-                .click());
+                .clickOnCheckbox(checkbox));
     }
 
     @When("I select radio button {string}")
     public void selectRadio(String radio) {
         differentElementsPage
             .getDifferentElements()
-            .getRadioButton(radio)
-            .click();
+            .clickOnRadioButton(radio);
     }
 
     @When("I select dropdown {string}")
@@ -55,10 +53,14 @@ public class ActionStep extends AbstractStep {
     public void selectVipCheckboxForUser(String username) {
         userTablePage.getUserTable().getUserTableWithReplace().forEach(line -> {
             if (line.get(1).equals(username)) {
-                WebElement checkbox = userTablePage.getUserTable().getCheckboxForUser(Integer.parseInt(line.get(0)));
-                checkbox.click();
-                if (!checkbox.isSelected()) {
-                    checkbox.click();
+                userTablePage
+                    .getUserTable()
+                    .clickOnCheckboxForUser(Integer.parseInt(line.get(0)));
+
+                if (!userTablePage.getUserTable().getCheckboxForUser(Integer.parseInt(line.get(0))).isSelected()) {
+                    userTablePage
+                        .getUserTable()
+                        .clickOnCheckboxForUser(Integer.parseInt(line.get(0)));
                 }
             }
             }

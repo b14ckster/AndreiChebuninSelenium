@@ -79,4 +79,7 @@ public class UserTable extends AbstractComponent {
         return checkboxes.get(userIndex);
     }
 
+    public void clickOnCheckboxForUser(int userIndex) {
+        getCheckboxForUser(userIndex).click();
+    }
 }

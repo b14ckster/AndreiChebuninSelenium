@@ -87,7 +87,15 @@ public class Header extends AbstractComponent {
         return navigationElements.findElement(By.xpath("./li/a[contains(text(), \"" + elementName + "\")]"));
     }
 
-    public WebElement getDropdownElement(String elementName) {
+    public WebElement getDropdownElementInService(String elementName) {
         return getHeaderElement("Service").findElement(By.xpath("//a[contains(text(), \"" + elementName + "\")]"));
+    }
+
+    public void clickOnHeaderElement(String headerElement) {
+        getHeaderElement(headerElement).click();
+    }
+
+    public void clickOnOptionInDropdownService(String option) {
+        getDropdownElementInService(option).click();
     }
 }

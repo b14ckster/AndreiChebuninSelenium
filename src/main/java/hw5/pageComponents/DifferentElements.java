@@ -52,4 +52,12 @@ public class DifferentElements extends AbstractComponent {
                 .map(Radio::new)
                 .orElse(null);
     }
+
+    public void clickOnCheckbox(String checkbox) {
+        getCheckbox(checkbox).click();
+    }
+
+    public void clickOnRadioButton(String radio) {
+        getRadioButton(radio).click();
+    }
 }
