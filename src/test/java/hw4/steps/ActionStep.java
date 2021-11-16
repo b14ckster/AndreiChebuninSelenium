@@ -44,7 +44,10 @@ public class ActionStep extends AbstractStep {
         CheckBox checkBoxButton = differentElementsPage
                         .getDifferentElements()
                         .getCheckbox(checkbox);
-        checkBoxButton.click();
+
+        differentElementsPage
+            .getDifferentElements()
+            .clickOnCheckbox(checkbox);
     }
 
     @Step("Select radio: {radio}")
@@ -52,7 +55,10 @@ public class ActionStep extends AbstractStep {
         Radio radioButton = differentElementsPage
                 .getDifferentElements()
                 .getRadioButton(radio);
-        radioButton.click();
+
+        differentElementsPage
+            .getDifferentElements()
+            .clickOnRadioButton(radio);
     }
 
     @Step("Select in dropdown: {dropdown}")
