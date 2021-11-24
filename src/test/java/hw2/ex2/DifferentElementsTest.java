@@ -63,7 +63,7 @@ public class DifferentElementsTest extends BaseClassTest {
         //3. Perform login
         webDriver.findElement(By.id("user-icon")).click();
         webDriver.findElement(By.id("name")).sendKeys(USERNAME);
-        webDriver.findElement(By.id("password")).sendKeys(PASS);
+        webDriver.findElement(By.id("password")).sendKeys(PASSWORD);
         webDriver.findElement(By.id("login-button")).click();
 
         //4. Assert User name in the left-top side of screen that user is loggined
