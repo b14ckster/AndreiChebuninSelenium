@@ -56,6 +56,21 @@
         <artifactId>assertj-core</artifactId>
         <version>${assertj-core.version}</version>
     </dependency>
+    <dependency>
+        <groupId>commons-configuration</groupId>
+        <artifactId>commons-configuration</artifactId>
+        <version>${commons-configuration.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>ru.yandex.qatools.htmlelements</groupId>
+        <artifactId>htmlelements-java</artifactId>
+        <version>${htmlelements-java.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>ru.yandex.qatools.htmlelements</groupId>
+        <artifactId>htmlelements-matchers</artifactId>
+        <version>${htmlelements-matchers.version}</version>
+    </dependency>
 </dependencies>
 
     <build>
@@ -115,6 +130,12 @@
             <id>hw2-all-tests-suite</id>
             <properties>
                 <testng.suite.file>${testng.suite.path}/hw2/hw2-all-tests-suite.xml</testng.suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw3-all-tests-suite</id>
+            <properties>
+                <testng.suite.file>${testng.suite.path}/hw3/hw3-all-tests-suite.xml</testng.suite.file>
             </properties>
         </profile>
     </profiles>
