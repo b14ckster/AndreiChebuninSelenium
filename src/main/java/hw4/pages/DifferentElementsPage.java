@@ -1,7 +1,7 @@
-package hw3.pages;
+package hw4.pages;
 
-import hw3.pageComponents.DifferentElements;
-import hw3.pageComponents.LogPanel;
+import hw4.pageComponents.DifferentElements;
+import hw4.pageComponents.LogPanel;
 import org.openqa.selenium.WebDriver;
 
 public class DifferentElementsPage extends AbstractPage {

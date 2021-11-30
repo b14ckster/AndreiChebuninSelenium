@@ -1,6 +1,6 @@
-package hw3.pageComponents;
+package hw4.pageComponents;
 
-import hw3.pages.DifferentElementsPage;
+import hw4.pages.DifferentElementsPage;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;

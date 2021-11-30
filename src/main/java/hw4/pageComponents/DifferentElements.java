@@ -1,4 +1,4 @@
-package hw3.pageComponents;
+package hw4.pageComponents;
 
 import java.util.List;
 import org.openqa.selenium.By;
@@ -60,5 +60,8 @@ public class DifferentElements extends AbstractComponent {
     public void clickOnRadioButton(String radio) {
         getRadioButton(radio).click();
     }
+<<<<<<< HEAD:src/main/java/hw4/pageComponents/DifferentElements.java
+=======
 
+>>>>>>> master:src/main/java/hw3/pageComponents/DifferentElements.java
 }

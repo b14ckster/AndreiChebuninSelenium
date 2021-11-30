@@ -1,4 +1,4 @@
-package hw3;
+package hw4;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,21 +22,21 @@ public class DataClassTest {
     );
 
     public static final List<String> BENEFIT_TEXTS = new ArrayList<>(
-            List.of(
-                    "To include good practices\n"
-                        + "and ideas from successful\n"
-                        + "EPAM project",
+        List.of(
+            "To include good practices\n"
+                + "and ideas from successful\n"
+                + "EPAM project",
 
-                    "To be flexible and\n"
-                        + "customizable",
+            "To be flexible and\n"
+                + "customizable",
 
-                    "To be multiplatform",
+            "To be multiplatform",
 
-                    "Already have good base\n"
-                        + "(about 20 internal and\n"
-                        + "some external projects),\n"
-                        + "wish to get more…"
-            )
+            "Already have good base\n"
+                + "(about 20 internal and\n"
+                + "some external projects),\n"
+                + "wish to get more…"
+        )
     );
 
     public static final List<String> CHECKBOX = new ArrayList<>(

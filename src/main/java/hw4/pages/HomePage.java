@@ -1,7 +1,7 @@
-package hw3.pages;
+package hw4.pages;
 
-import hw3.pageComponents.Benefit;
-import hw3.pageComponents.Frame;
+import hw4.pageComponents.Benefit;
+import hw4.pageComponents.Frame;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends AbstractPage {
@@ -9,9 +9,8 @@ public class HomePage extends AbstractPage {
     private final Frame frame = new Frame(this);
     private final Benefit benefit = new Benefit(webDriver);
 
-    public HomePage(WebDriver driver, String url) {
+    public HomePage(WebDriver driver) {
         super(driver);
-        driver.get(url);
     }
 
     public Benefit getBenefit() {
@@ -25,5 +24,10 @@ public class HomePage extends AbstractPage {
     public Frame switchToFrame() {
         webDriver.switchTo().frame(frame.getFrame());
         return new Frame(this);
+    }
+
+    public HomePage open(String url) {
+        webDriver.get(url);
+        return this;
     }
 }

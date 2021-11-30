@@ -1,4 +1,4 @@
-package hw3.pageComponents;
+package hw4.pageComponents;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@SuppressWarnings("checkstyle:Indentation")
 public class Benefit extends AbstractComponent {
 
     public Benefit(WebDriver webDriver) {
@@ -31,11 +30,7 @@ public class Benefit extends AbstractComponent {
         return benefitIcons;
     }
 
-    public List<WebElement> getBenefitTexts() {
-        return benefitTexts;
-    }
-
-    public List<String> getBenefitTextsTexts() {
+    public List<String> getBenefitTextValues() {
         return benefitTexts
                .stream()
                .map(WebElement::getText)

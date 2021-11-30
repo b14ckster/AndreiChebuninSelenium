@@ -1,6 +1,6 @@
-package hw3.pageComponents;
+package hw4.pageComponents;
 
-import hw3.pages.AbstractPage;
+import hw4.pages.AbstractPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

@@ -1,7 +1,7 @@
-package hw3.pages;
+package hw4.pages;
 
-import hw3.pageComponents.Header;
-import hw3.pageComponents.SidebarMenu;
+import hw4.pageComponents.Header;
+import hw4.pageComponents.SidebarMenu;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
