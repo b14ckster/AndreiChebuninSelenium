@@ -30,11 +30,7 @@ public class Benefit extends AbstractComponent {
         return benefitIcons;
     }
 
-    public List<WebElement> getBenefitTexts() {
-        return benefitTexts;
-    }
-
-    public List<String> getBenefitTextsTexts() {
+    public List<String> getBenefitTextValues() {
         return benefitTexts
                .stream()
                .map(WebElement::getText)

@@ -80,7 +80,7 @@ public class AssertionStep extends AbstractStep {
     @Step("Assert that texts on the Index Page under icons have proper text: {expectedText}")
     public void checkBenefitTexts(List<String> expectedText) {
         Assertions
-                .assertThat(homePage.getBenefit().getBenefitTextsTexts())
+                .assertThat(homePage.getBenefit().getBenefitTextValues())
                 .isEqualTo(expectedText);
 
     }

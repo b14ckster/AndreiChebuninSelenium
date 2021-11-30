@@ -33,9 +33,4 @@ public abstract class AbstractPage {
     public SidebarMenu getSidebarMenu() {
         return sidebarMenu;
     }
-
-    public AbstractPage open(String url) {
-        webDriver.get(url);
-        return this;
-    }
 }

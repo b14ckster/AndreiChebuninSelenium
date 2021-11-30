@@ -25,4 +25,9 @@ public class HomePage extends AbstractPage {
         webDriver.switchTo().frame(frame.getFrame());
         return new Frame(this);
     }
+
+    public HomePage open(String url) {
+        webDriver.get(url);
+        return this;
+    }
 }
