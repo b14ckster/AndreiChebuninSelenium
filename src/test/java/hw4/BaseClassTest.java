@@ -1,7 +1,12 @@
+<<<<<<< HEAD:src/test/java/hw4/BaseClassTest.java
 package hw4;
 
 import hw4.steps.ActionStep;
 import hw4.steps.AssertionStep;
+=======
+package hw3;
+
+>>>>>>> master:src/test/java/hw3/BaseClassTest.java
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.configuration.Configuration;

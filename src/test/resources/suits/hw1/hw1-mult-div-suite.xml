@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="hw1-mult-div-suite">
+    <test name="hw1-mult-div-suite">
+        <classes>
+            <class name="hw1.tests.MultiplyTest"></class>
+            <class name="hw1.tests.DivTest"></class>
+        </classes>
+    </test>
+</suite>
