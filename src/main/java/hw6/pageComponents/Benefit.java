@@ -8,15 +8,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class Benefit extends AbstractComponent {
 
-    public Benefit(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     @FindBy(css = "span[class^=\"icons-benefit\"]")
     private List<WebElement> benefitIcons;
 
     @FindBy(css = "span[class=\"benefit-txt\"]")
     private List<WebElement> benefitTexts;
+
+    public Benefit(WebDriver webDriver) {
+        super(webDriver);
+    }
 
     public int getNumberOfBenefitIcons() {
         return benefitIcons.size();

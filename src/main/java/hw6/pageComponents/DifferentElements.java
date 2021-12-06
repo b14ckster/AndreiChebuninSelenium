@@ -12,10 +12,6 @@ import ru.yandex.qatools.htmlelements.element.Radio;
 @FindBy(className = "main-content-hg")
 public class DifferentElements extends AbstractComponent {
 
-    public DifferentElements(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     private static final By inputInLabelLocator = By.tagName("input");
 
     @FindBy(className = "label-checkbox")
@@ -26,6 +22,10 @@ public class DifferentElements extends AbstractComponent {
 
     @FindBy(tagName = "select")
     private WebElement dropdown;
+
+    public DifferentElements(WebDriver webDriver) {
+        super(webDriver);
+    }
 
     public Select getDropdown(String text) {
         Select dropdownSelect = new Select(dropdown);

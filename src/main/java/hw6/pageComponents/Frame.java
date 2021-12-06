@@ -8,16 +8,16 @@ public class Frame extends AbstractComponent {
 
     private final AbstractPage parent;
 
-    public Frame(AbstractPage parent) {
-        super(parent.webDriver);
-        this.parent = parent;
-    }
-
     @FindBy(id = "frame")
     private WebElement frame;
 
     @FindBy(id = "frame-button")
     private WebElement frameButton;
+
+    public Frame(AbstractPage parent) {
+        super(parent.webDriver);
+        this.parent = parent;
+    }
 
     public WebElement getFrame() {
         return frame;

@@ -10,10 +10,6 @@ import org.openqa.selenium.support.FindBy;
 @FindBy(tagName = "header")
 public class Header extends AbstractComponent {
 
-    public Header(WebDriver webDriver) {
-        super(webDriver);
-    }
-
     @FindBy(id = "user-icon")
     private WebElement userIcon;
 
@@ -37,6 +33,10 @@ public class Header extends AbstractComponent {
 
     @FindBy(css = "ul[role=\"menu\"]>li>a[href=\"different-elements.html\"]")
     private WebElement differentElements;
+
+    public Header(WebDriver webDriver) {
+        super(webDriver);
+    }
 
     public Header inputPassword(String password) {
         passwordInput.sendKeys(password);

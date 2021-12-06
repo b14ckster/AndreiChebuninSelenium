@@ -9,12 +9,12 @@ import org.openqa.selenium.support.FindBy;
 @FindBy(css = "ul.sidebar-menu")
 public class SidebarMenu extends AbstractComponent {
 
+    @FindBy(css = "ul.sidebar-menu>li")
+    private List<WebElement> sidebarMenu;
+
     public SidebarMenu(WebDriver webDriver) {
         super(webDriver);
     }
-
-    @FindBy(css = "ul.sidebar-menu>li")
-    private List<WebElement> sidebarMenu;
 
     public List<WebElement> getSidebarMenu() {
         return sidebarMenu;
