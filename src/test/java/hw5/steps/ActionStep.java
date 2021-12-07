@@ -52,17 +52,11 @@ public class ActionStep extends AbstractStep {
     @When("I select 'vip' checkbox for {string}")
     public void selectVipCheckboxForUser(String username) {
         userTablePage.getUserTable().getUserTableWithReplace().forEach(line -> {
-            if (line.get(1).equals(username)) {
-                userTablePage
-                    .getUserTable()
-                    .clickOnCheckboxForUser(Integer.parseInt(line.get(0)));
-
-                if (!userTablePage.getUserTable().getCheckboxForUser(Integer.parseInt(line.get(0))).isSelected()) {
+                if (line.get(1).equals(username)) {
                     userTablePage
                         .getUserTable()
-                        .clickOnCheckboxForUser(Integer.parseInt(line.get(0)));
+                        .clickOnCheckboxForUser(Integer.parseInt(line.get(0)) - 1);
                 }
-            }
             }
         );
     }
